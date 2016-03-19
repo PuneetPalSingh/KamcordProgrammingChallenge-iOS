@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9FFD82531C9CD1B3003474D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD82521C9CD1B3003474D3 /* main.m */; };
+		9FFD82561C9CD1B3003474D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD82551C9CD1B3003474D3 /* AppDelegate.m */; };
+		9FFD82591C9CD1B3003474D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD82581C9CD1B3003474D3 /* ViewController.m */; };
+		9FFD825C1C9CD1B3003474D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFD825A1C9CD1B3003474D3 /* Main.storyboard */; };
+		9FFD825E1C9CD1B3003474D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFD825D1C9CD1B3003474D3 /* Assets.xcassets */; };
+		9FFD82611C9CD1B3003474D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFD825F1C9CD1B3003474D3 /* LaunchScreen.storyboard */; };
+		9FFD826C1C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD826B1C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSTests.m */; };
+		9FFD82771C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD82761C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9FFD82681C9CD1B3003474D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FFD82461C9CD1B3003474D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FFD824D1C9CD1B3003474D3;
+			remoteInfo = "KamcordProgrammingChallenge-iOS";
+		};
+		9FFD82731C9CD1B3003474D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FFD82461C9CD1B3003474D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FFD824D1C9CD1B3003474D3;
+			remoteInfo = "KamcordProgrammingChallenge-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9FFD824E1C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KamcordProgrammingChallenge-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FFD82521C9CD1B3003474D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9FFD82541C9CD1B3003474D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9FFD82551C9CD1B3003474D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9FFD82571C9CD1B3003474D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9FFD82581C9CD1B3003474D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9FFD825B1C9CD1B3003474D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9FFD825D1C9CD1B3003474D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9FFD82601C9CD1B3003474D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9FFD82621C9CD1B3003474D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FFD82671C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KamcordProgrammingChallenge-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FFD826B1C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KamcordProgrammingChallenge_iOSTests.m; sourceTree = "<group>"; };
+		9FFD826D1C9CD1B3003474D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FFD82721C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KamcordProgrammingChallenge-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FFD82761C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KamcordProgrammingChallenge_iOSUITests.m; sourceTree = "<group>"; };
+		9FFD82781C9CD1B3003474D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FFD824B1C9CD1B3003474D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FFD82641C9CD1B3003474D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FFD826F1C9CD1B3003474D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FFD82451C9CD1B3003474D3 = {
+			isa = PBXGroup;
+			children = (
+				9FFD82501C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOS */,
+				9FFD826A1C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSTests */,
+				9FFD82751C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSUITests */,
+				9FFD824F1C9CD1B3003474D3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9FFD824F1C9CD1B3003474D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FFD824E1C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOS.app */,
+				9FFD82671C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSTests.xctest */,
+				9FFD82721C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FFD82501C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9FFD82541C9CD1B3003474D3 /* AppDelegate.h */,
+				9FFD82551C9CD1B3003474D3 /* AppDelegate.m */,
+				9FFD82571C9CD1B3003474D3 /* ViewController.h */,
+				9FFD82581C9CD1B3003474D3 /* ViewController.m */,
+				9FFD825A1C9CD1B3003474D3 /* Main.storyboard */,
+				9FFD825D1C9CD1B3003474D3 /* Assets.xcassets */,
+				9FFD825F1C9CD1B3003474D3 /* LaunchScreen.storyboard */,
+				9FFD82621C9CD1B3003474D3 /* Info.plist */,
+				9FFD82511C9CD1B3003474D3 /* Supporting Files */,
+			);
+			path = "KamcordProgrammingChallenge-iOS";
+			sourceTree = "<group>";
+		};
+		9FFD82511C9CD1B3003474D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9FFD82521C9CD1B3003474D3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FFD826A1C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				9FFD826B1C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSTests.m */,
+				9FFD826D1C9CD1B3003474D3 /* Info.plist */,
+			);
+			path = "KamcordProgrammingChallenge-iOSTests";
+			sourceTree = "<group>";
+		};
+		9FFD82751C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9FFD82761C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSUITests.m */,
+				9FFD82781C9CD1B3003474D3 /* Info.plist */,
+			);
+			path = "KamcordProgrammingChallenge-iOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9FFD824D1C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FFD827B1C9CD1B3003474D3 /* Build configuration list for PBXNativeTarget "KamcordProgrammingChallenge-iOS" */;
+			buildPhases = (
+				9FFD824A1C9CD1B3003474D3 /* Sources */,
+				9FFD824B1C9CD1B3003474D3 /* Frameworks */,
+				9FFD824C1C9CD1B3003474D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KamcordProgrammingChallenge-iOS";
+			productName = "KamcordProgrammingChallenge-iOS";
+			productReference = 9FFD824E1C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9FFD82661C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FFD827E1C9CD1B3003474D3 /* Build configuration list for PBXNativeTarget "KamcordProgrammingChallenge-iOSTests" */;
+			buildPhases = (
+				9FFD82631C9CD1B3003474D3 /* Sources */,
+				9FFD82641C9CD1B3003474D3 /* Frameworks */,
+				9FFD82651C9CD1B3003474D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FFD82691C9CD1B3003474D3 /* PBXTargetDependency */,
+			);
+			name = "KamcordProgrammingChallenge-iOSTests";
+			productName = "KamcordProgrammingChallenge-iOSTests";
+			productReference = 9FFD82671C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9FFD82711C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FFD82811C9CD1B3003474D3 /* Build configuration list for PBXNativeTarget "KamcordProgrammingChallenge-iOSUITests" */;
+			buildPhases = (
+				9FFD826E1C9CD1B3003474D3 /* Sources */,
+				9FFD826F1C9CD1B3003474D3 /* Frameworks */,
+				9FFD82701C9CD1B3003474D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FFD82741C9CD1B3003474D3 /* PBXTargetDependency */,
+			);
+			name = "KamcordProgrammingChallenge-iOSUITests";
+			productName = "KamcordProgrammingChallenge-iOSUITests";
+			productReference = 9FFD82721C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FFD82461C9CD1B3003474D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Puneet Pal Singh";
+				TargetAttributes = {
+					9FFD824D1C9CD1B3003474D3 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					9FFD82661C9CD1B3003474D3 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 9FFD824D1C9CD1B3003474D3;
+					};
+					9FFD82711C9CD1B3003474D3 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 9FFD824D1C9CD1B3003474D3;
+					};
+				};
+			};
+			buildConfigurationList = 9FFD82491C9CD1B3003474D3 /* Build configuration list for PBXProject "KamcordProgrammingChallenge-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9FFD82451C9CD1B3003474D3;
+			productRefGroup = 9FFD824F1C9CD1B3003474D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FFD824D1C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOS */,
+				9FFD82661C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSTests */,
+				9FFD82711C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9FFD824C1C9CD1B3003474D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FFD82611C9CD1B3003474D3 /* LaunchScreen.storyboard in Resources */,
+				9FFD825E1C9CD1B3003474D3 /* Assets.xcassets in Resources */,
+				9FFD825C1C9CD1B3003474D3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FFD82651C9CD1B3003474D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FFD82701C9CD1B3003474D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FFD824A1C9CD1B3003474D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FFD82591C9CD1B3003474D3 /* ViewController.m in Sources */,
+				9FFD82561C9CD1B3003474D3 /* AppDelegate.m in Sources */,
+				9FFD82531C9CD1B3003474D3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FFD82631C9CD1B3003474D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FFD826C1C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FFD826E1C9CD1B3003474D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FFD82771C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9FFD82691C9CD1B3003474D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9FFD824D1C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOS */;
+			targetProxy = 9FFD82681C9CD1B3003474D3 /* PBXContainerItemProxy */;
+		};
+		9FFD82741C9CD1B3003474D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9FFD824D1C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOS */;
+			targetProxy = 9FFD82731C9CD1B3003474D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9FFD825A1C9CD1B3003474D3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FFD825B1C9CD1B3003474D3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9FFD825F1C9CD1B3003474D3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FFD82601C9CD1B3003474D3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9FFD82791C9CD1B3003474D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9FFD827A1C9CD1B3003474D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9FFD827C1C9CD1B3003474D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "KamcordProgrammingChallenge-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.puneetpalsingh.KamcordProgrammingChallenge-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9FFD827D1C9CD1B3003474D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "KamcordProgrammingChallenge-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.puneetpalsingh.KamcordProgrammingChallenge-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9FFD827F1C9CD1B3003474D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "KamcordProgrammingChallenge-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.puneetpalsingh.KamcordProgrammingChallenge-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KamcordProgrammingChallenge-iOS.app/KamcordProgrammingChallenge-iOS";
+			};
+			name = Debug;
+		};
+		9FFD82801C9CD1B3003474D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "KamcordProgrammingChallenge-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.puneetpalsingh.KamcordProgrammingChallenge-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KamcordProgrammingChallenge-iOS.app/KamcordProgrammingChallenge-iOS";
+			};
+			name = Release;
+		};
+		9FFD82821C9CD1B3003474D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "KamcordProgrammingChallenge-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.puneetpalsingh.KamcordProgrammingChallenge-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "KamcordProgrammingChallenge-iOS";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		9FFD82831C9CD1B3003474D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "KamcordProgrammingChallenge-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.puneetpalsingh.KamcordProgrammingChallenge-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "KamcordProgrammingChallenge-iOS";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FFD82491C9CD1B3003474D3 /* Build configuration list for PBXProject "KamcordProgrammingChallenge-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FFD82791C9CD1B3003474D3 /* Debug */,
+				9FFD827A1C9CD1B3003474D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FFD827B1C9CD1B3003474D3 /* Build configuration list for PBXNativeTarget "KamcordProgrammingChallenge-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FFD827C1C9CD1B3003474D3 /* Debug */,
+				9FFD827D1C9CD1B3003474D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9FFD827E1C9CD1B3003474D3 /* Build configuration list for PBXNativeTarget "KamcordProgrammingChallenge-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FFD827F1C9CD1B3003474D3 /* Debug */,
+				9FFD82801C9CD1B3003474D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9FFD82811C9CD1B3003474D3 /* Build configuration list for PBXNativeTarget "KamcordProgrammingChallenge-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FFD82821C9CD1B3003474D3 /* Debug */,
+				9FFD82831C9CD1B3003474D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9FFD82461C9CD1B3003474D3 /* Project object */;
+}
