@@ -6,13 +6,13 @@
 //  Copyright © 2016 Puneet Pal Singh. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "KPCViewController.h"
 
-@interface ViewController ()
+@interface KPCViewController ()
 
 @end
 
-@implementation ViewController
+@implementation KPCViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
