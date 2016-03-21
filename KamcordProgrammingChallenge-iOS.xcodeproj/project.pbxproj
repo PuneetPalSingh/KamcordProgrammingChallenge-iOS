@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9FF757DA1C9E147900B4F7C7 /* KPCHTTPURLRequestConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF757D91C9E147900B4F7C7 /* KPCHTTPURLRequestConstructor.m */; };
+		9FF757DF1C9E17AD00B4F7C7 /* KPCSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF757DE1C9E17AD00B4F7C7 /* KPCSessionManager.m */; };
+		9FF757E81C9E54E200B4F7C7 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF757E71C9E54E200B4F7C7 /* NSString+Additions.m */; };
+		9FF757F01C9EB0AC00B4F7C7 /* KPCGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF757EF1C9EB0AC00B4F7C7 /* KPCGame.m */; };
+		9FF757F31C9EB0C100B4F7C7 /* KPCGamesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF757F21C9EB0C100B4F7C7 /* KPCGamesCollection.m */; };
 		9FFD82531C9CD1B3003474D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD82521C9CD1B3003474D3 /* main.m */; };
-		9FFD82561C9CD1B3003474D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD82551C9CD1B3003474D3 /* AppDelegate.m */; };
-		9FFD82591C9CD1B3003474D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD82581C9CD1B3003474D3 /* ViewController.m */; };
+		9FFD82561C9CD1B3003474D3 /* KPCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD82551C9CD1B3003474D3 /* KPCAppDelegate.m */; };
+		9FFD82591C9CD1B3003474D3 /* KPCGamesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD82581C9CD1B3003474D3 /* KPCGamesVC.m */; };
 		9FFD825C1C9CD1B3003474D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFD825A1C9CD1B3003474D3 /* Main.storyboard */; };
 		9FFD825E1C9CD1B3003474D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFD825D1C9CD1B3003474D3 /* Assets.xcassets */; };
 		9FFD82611C9CD1B3003474D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFD825F1C9CD1B3003474D3 /* LaunchScreen.storyboard */; };
 		9FFD826C1C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD826B1C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSTests.m */; };
 		9FFD82771C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD82761C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSUITests.m */; };
+		9FFD82861C9CD9DB003474D3 /* KPCGamesCollectionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD82851C9CD9DB003474D3 /* KPCGamesCollectionCellView.m */; };
+		9FFD828F1C9CDD52003474D3 /* KPCGamesCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD828E1C9CDD52003474D3 /* KPCGamesCollectionVC.m */; };
+		9FFD82941C9CDFA5003474D3 /* KPCGamesCollectionCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FFD82931C9CDFA5003474D3 /* KPCGamesCollectionCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +43,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9FF757D81C9E147900B4F7C7 /* KPCHTTPURLRequestConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPCHTTPURLRequestConstructor.h; sourceTree = "<group>"; };
+		9FF757D91C9E147900B4F7C7 /* KPCHTTPURLRequestConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPCHTTPURLRequestConstructor.m; sourceTree = "<group>"; };
+		9FF757DB1C9E150100B4F7C7 /* KPCHTTPURLRequestConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPCHTTPURLRequestConstant.h; sourceTree = "<group>"; };
+		9FF757DD1C9E17AD00B4F7C7 /* KPCSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPCSessionManager.h; sourceTree = "<group>"; };
+		9FF757DE1C9E17AD00B4F7C7 /* KPCSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPCSessionManager.m; sourceTree = "<group>"; };
+		9FF757E61C9E54E200B4F7C7 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		9FF757E71C9E54E200B4F7C7 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		9FF757EE1C9EB0AC00B4F7C7 /* KPCGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPCGame.h; sourceTree = "<group>"; };
+		9FF757EF1C9EB0AC00B4F7C7 /* KPCGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPCGame.m; sourceTree = "<group>"; };
+		9FF757F11C9EB0C100B4F7C7 /* KPCGamesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPCGamesCollection.h; sourceTree = "<group>"; };
+		9FF757F21C9EB0C100B4F7C7 /* KPCGamesCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPCGamesCollection.m; sourceTree = "<group>"; };
 		9FFD824E1C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KamcordProgrammingChallenge-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFD82521C9CD1B3003474D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9FFD82541C9CD1B3003474D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		9FFD82551C9CD1B3003474D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9FFD82571C9CD1B3003474D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9FFD82581C9CD1B3003474D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9FFD82541C9CD1B3003474D3 /* KPCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPCAppDelegate.h; sourceTree = "<group>"; };
+		9FFD82551C9CD1B3003474D3 /* KPCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KPCAppDelegate.m; sourceTree = "<group>"; };
+		9FFD82571C9CD1B3003474D3 /* KPCGamesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPCGamesVC.h; sourceTree = "<group>"; };
+		9FFD82581C9CD1B3003474D3 /* KPCGamesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KPCGamesVC.m; sourceTree = "<group>"; };
 		9FFD825B1C9CD1B3003474D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FFD825D1C9CD1B3003474D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FFD82601C9CD1B3003474D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +70,11 @@
 		9FFD82721C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KamcordProgrammingChallenge-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFD82761C9CD1B3003474D3 /* KamcordProgrammingChallenge_iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KamcordProgrammingChallenge_iOSUITests.m; sourceTree = "<group>"; };
 		9FFD82781C9CD1B3003474D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FFD82841C9CD9DB003474D3 /* KPCGamesCollectionCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPCGamesCollectionCellView.h; sourceTree = "<group>"; };
+		9FFD82851C9CD9DB003474D3 /* KPCGamesCollectionCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPCGamesCollectionCellView.m; sourceTree = "<group>"; };
+		9FFD828D1C9CDD52003474D3 /* KPCGamesCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPCGamesCollectionVC.h; sourceTree = "<group>"; };
+		9FFD828E1C9CDD52003474D3 /* KPCGamesCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPCGamesCollectionVC.m; sourceTree = "<group>"; };
+		9FFD82931C9CDFA5003474D3 /* KPCGamesCollectionCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KPCGamesCollectionCellView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +102,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9FF757DC1C9E177000B4F7C7 /* KPCGamesCollectionCellView */ = {
+			isa = PBXGroup;
+			children = (
+				9FFD82841C9CD9DB003474D3 /* KPCGamesCollectionCellView.h */,
+				9FFD82851C9CD9DB003474D3 /* KPCGamesCollectionCellView.m */,
+				9FFD82931C9CDFA5003474D3 /* KPCGamesCollectionCellView.xib */,
+			);
+			name = KPCGamesCollectionCellView;
+			sourceTree = "<group>";
+		};
+		9FF757F41C9F582400B4F7C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9FF757EE1C9EB0AC00B4F7C7 /* KPCGame.h */,
+				9FF757EF1C9EB0AC00B4F7C7 /* KPCGame.m */,
+				9FF757F11C9EB0C100B4F7C7 /* KPCGamesCollection.h */,
+				9FF757F21C9EB0C100B4F7C7 /* KPCGamesCollection.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9FF757F51C9F584700B4F7C7 /* KPCSessionManager */ = {
+			isa = PBXGroup;
+			children = (
+				9FF757DD1C9E17AD00B4F7C7 /* KPCSessionManager.h */,
+				9FF757DE1C9E17AD00B4F7C7 /* KPCSessionManager.m */,
+				9FF757D81C9E147900B4F7C7 /* KPCHTTPURLRequestConstructor.h */,
+				9FF757D91C9E147900B4F7C7 /* KPCHTTPURLRequestConstructor.m */,
+				9FF757DB1C9E150100B4F7C7 /* KPCHTTPURLRequestConstant.h */,
+			);
+			name = KPCSessionManager;
+			sourceTree = "<group>";
+		};
 		9FFD82451C9CD1B3003474D3 = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +158,17 @@
 		9FFD82501C9CD1B3003474D3 /* KamcordProgrammingChallenge-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9FFD82541C9CD1B3003474D3 /* AppDelegate.h */,
-				9FFD82551C9CD1B3003474D3 /* AppDelegate.m */,
-				9FFD82571C9CD1B3003474D3 /* ViewController.h */,
-				9FFD82581C9CD1B3003474D3 /* ViewController.m */,
+				9FFD82541C9CD1B3003474D3 /* KPCAppDelegate.h */,
+				9FFD82551C9CD1B3003474D3 /* KPCAppDelegate.m */,
+				9FFD82571C9CD1B3003474D3 /* KPCGamesVC.h */,
+				9FFD82581C9CD1B3003474D3 /* KPCGamesVC.m */,
+				9FFD828D1C9CDD52003474D3 /* KPCGamesCollectionVC.h */,
+				9FFD828E1C9CDD52003474D3 /* KPCGamesCollectionVC.m */,
+				9FF757E61C9E54E200B4F7C7 /* NSString+Additions.h */,
+				9FF757E71C9E54E200B4F7C7 /* NSString+Additions.m */,
+				9FF757F51C9F584700B4F7C7 /* KPCSessionManager */,
+				9FF757F41C9F582400B4F7C7 /* Model */,
+				9FF757DC1C9E177000B4F7C7 /* KPCGamesCollectionCellView */,
 				9FFD825A1C9CD1B3003474D3 /* Main.storyboard */,
 				9FFD825D1C9CD1B3003474D3 /* Assets.xcassets */,
 				9FFD825F1C9CD1B3003474D3 /* LaunchScreen.storyboard */,
@@ -202,11 +266,13 @@
 		9FFD82461C9CD1B3003474D3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KPC;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Puneet Pal Singh";
 				TargetAttributes = {
 					9FFD824D1C9CD1B3003474D3 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = QLHUZX82AB;
 					};
 					9FFD82661C9CD1B3003474D3 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -243,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FFD82941C9CDFA5003474D3 /* KPCGamesCollectionCellView.xib in Resources */,
 				9FFD82611C9CD1B3003474D3 /* LaunchScreen.storyboard in Resources */,
 				9FFD825E1C9CD1B3003474D3 /* Assets.xcassets in Resources */,
 				9FFD825C1C9CD1B3003474D3 /* Main.storyboard in Resources */,
@@ -270,9 +337,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FFD82591C9CD1B3003474D3 /* ViewController.m in Sources */,
-				9FFD82561C9CD1B3003474D3 /* AppDelegate.m in Sources */,
+				9FF757DF1C9E17AD00B4F7C7 /* KPCSessionManager.m in Sources */,
+				9FFD82861C9CD9DB003474D3 /* KPCGamesCollectionCellView.m in Sources */,
+				9FF757E81C9E54E200B4F7C7 /* NSString+Additions.m in Sources */,
+				9FFD82591C9CD1B3003474D3 /* KPCGamesVC.m in Sources */,
+				9FFD82561C9CD1B3003474D3 /* KPCAppDelegate.m in Sources */,
+				9FFD828F1C9CDD52003474D3 /* KPCGamesCollectionVC.m in Sources */,
 				9FFD82531C9CD1B3003474D3 /* main.m in Sources */,
+				9FF757F01C9EB0AC00B4F7C7 /* KPCGame.m in Sources */,
+				9FF757F31C9EB0C100B4F7C7 /* KPCGamesCollection.m in Sources */,
+				9FF757DA1C9E147900B4F7C7 /* KPCHTTPURLRequestConstructor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,10 +485,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "KamcordProgrammingChallenge-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.puneetpalsingh.KamcordProgrammingChallenge-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -422,10 +500,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "KamcordProgrammingChallenge-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.puneetpalsingh.KamcordProgrammingChallenge-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -496,6 +578,7 @@
 				9FFD827D1C9CD1B3003474D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FFD827E1C9CD1B3003474D3 /* Build configuration list for PBXNativeTarget "KamcordProgrammingChallenge-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +587,7 @@
 				9FFD82801C9CD1B3003474D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FFD82811C9CD1B3003474D3 /* Build configuration list for PBXNativeTarget "KamcordProgrammingChallenge-iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +596,7 @@
 				9FFD82831C9CD1B3003474D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

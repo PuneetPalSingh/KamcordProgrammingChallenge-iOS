@@ -1,5 +1,5 @@
 //
-//  KPCViewController.h
+//  KPCGamesVC.h
 //  KamcordProgrammingChallenge-iOS
 //
 //  Created by Puneet Pal Singh on 3/18/16.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KPCViewController : UIViewController
+@interface KPCGamesVC : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *gamesCollectionContainerView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingActivityIndicator;
 
 @end
 

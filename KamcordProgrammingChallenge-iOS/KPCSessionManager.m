@@ -1,182 +1,187 @@
 //
-//  KPCSession.m
+//  KPCSessionManager.m
 //  KamcordProgrammingChallenge-iOS
 //
 //  Created by Puneet Pal Singh on 3/19/16.
 //  Copyright © 2016 Puneet Pal Singh. All rights reserved.
 //
 
-#import "KPCSession.h"
+#import "KPCSessionManager.h"
+#import "KPCHTTPURLRequestConstant.h"
+#import "KPCHTTPURLRequestConstructor.h"
+#import "NSString+Additions.h"
+#import "KPCGame.h"
 
-
-typedef NS_ENUM(NSInteger, SessionResponseStatus) {
-    SessionResponseStatusSuccessful = 200,
-    SessionResponseStatusWrongCredentials = 403,
-    SessionResponseStatusDataMissing = 403,
+typedef NS_ENUM(NSInteger, SessionResponseCode) {
+    SessionResponseCodeAllOk = 0,
+    SessionResponseCodeInsuficientParameters = 3,
+    SessionResponseCodeErrorDownloadingImage = 404,
 };
 
-static NSString *noEntityFoundDomain = @"com.puneetpalsingh.ScuOffCampusApp.NoEntityFound";
-static NSString *noResultFoundDomain = @"com.puneetpalsingh.ScuOffCampusApp.NoResultFound";
+#define SessionResponse @"response"
 
-#define SessionResponseMessage = @"com.puneetpalsingh.ScuOffCampusApp.NoEntityFound";
-#define SessionResponseMessage = @"com.puneetpalsingh.ScuOffCampusApp.NoEntityFound";
+static NSString *SessionResponseStatusInsuficientParametersDomain = @"com.puneetpalsingh.ScuOffCampusApp.InsuficientParameters";
+static NSString *SessionResponseStatusErrorDownloadingImageDomain = @"com.puneetpalsingh.ScuOffCampusApp.ErrorDownloadingImage";
 
-#define SessionResponseMessage = @"com.puneetpalsingh.ScuOffCampusApp.NoEntityFound";
-
-
-typedef NS_ENUM(NSInteger, SessionResponseKeys) {
-    SessionResponseKeys1 = 0,
-    SessionResponseKeys2,
-    SessionResponseKeys3,
-};
-
-
-@implementation KPCSession{
-    dispatch_queue_t _logInSessionQueue;
-}
-
-
-- (void)getRequestWithUrl:(NSMutableURLRequest *)urlRequest token:(NSString *)token block:(KPCSessionResponseBlock)block{
+@implementation KPCSessionManager{
     
-    /*
-     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-     
-     //NSSession for requesting token
-     
-     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-     
-     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:nil];
-     
-     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://scuoffcampus.herokuapp.com/api/sign_in?email=%@&password=%@",email,password]];
-     
-     NSMutableURLRequest *request = [SCHHTTPURLRequestConstructor
-     urlRequestWithURL:url
-     httpMethod:SCHHTTPRequestMethodPOST
-     httpHeaders:@{SCHHTTPRequestHeaderNameContentType : SCHHTTPURLRequestContentTypeUrlEncoded}
-     parameters:nil];
-     
-     
-     
-     
-     NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-     
-     
-     
-     //Getting NSDictionary from JSON
-     
-     NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-     
-     
-     if ([[parsedObject valueForKey:@"status"] isEqualToString:@"403"]) {
-     
-     
-     
-     dispatch_async(dispatch_get_main_queue(), ^{
-     
-     NSError *error = nil;
-     
-     error = [NSError errorWithDomain:noEntityFoundDomain code:Ses userInfo:@{
-     
-     @"No entity found in NSManagedObjectModel":NSLocalizedDescriptionKey
-     
-     }];
-     
-     
-     });
-     
-     
-     
-     }
-     
-     else{
-     
-     
-     
-     // Creating new object and save to persistant store
-     
-     [CoreDataManager createNewManagedObjectForEntityForName:@"Token" withComplitionHandler:^(NSManagedObject *newObject, NSManagedObjectContext *context, BOOL success){
-     
-     
-     
-     
-     
-     if (success) {
-     
-     
-     
-     [newObject setValue:[parsedObject valueForKey:@"message"] forKey:@"message"];
-     
-     [newObject setValue:[parsedObject valueForKey:@"status"] forKey:@"status"];
-     
-     [newObject setValue:[parsedObject valueForKey:@"auth_token"] forKey:@"token"];
-     
-     
-     
-     NSError *coreDataError = nil;
-     
-     // Save the object to persistent store
-     
-     if (![context save:&coreDataError]) {
-     
-     NSLog(@"Can't Save! %@ %@", coreDataError, [coreDataError localizedDescription]);
-     
-     }
-     
-     else{
-     
-     
-     
-     dispatch_async(dispatch_get_main_queue(), ^{
-     
-     
-     
-     [_loginLoadingIndicator stopAnimating];
-     
-     
-     
-     SCHTabBarVC *tabBarVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarVC"];
-     
-     [self presentViewController:tabBarVC animated:NO completion:nil];
-     
-     
-     
-     });
-     
-     }
-     
-     }
-     
-     
-     
-     
-     
-     
-     
-     }];
-     
-     
-     
-     
-     
-     }
-     
-     
-     
-     }];
-     
-     
-     
-     [postDataTask resume];
-     
-     
-     [session finishTasksAndInvalidate];
-     
-     
-     });
-     
-     */
+    dispatch_queue_t _sessionQueue;
     
 }
 
+
+///--------------------------------------
+#pragma mark - Initialization
+///--------------------------------------
+
++ (instancetype)sessionWithToken:(NSString *)token{
+    
+        return[[self alloc]initWithToken:token];
+}
+
++ (instancetype)createSession{
+    
+    return[[self alloc]initWithToken:nil];
+}
+
+-(instancetype)initWithToken:(NSString *)token{
+    
+    if (self = [super init]) {
+        
+        _sessionToken = token;
+    }
+    return self;
+}
+
+///--------------------------------------
+#pragma mark - Get Request
+///--------------------------------------
+
+- (void)getRequestWithUrlInBackground:(NSURL *)url parameters:(NSDictionary *)parameters completionHandler:(KPCSessionJsonResponseBlock)block{
+    
+    
+    _sessionQueue = dispatch_queue_create("com.puneetpalsingh.KamcordProgrammingChallenge.sessionqueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    
+    dispatch_async(_sessionQueue, ^{
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:nil];
+        
+        
+        NSMutableURLRequest *request;
+        
+        NSString *thePath =  [url absoluteString];
+        
+        thePath = [thePath stringByAppendingQueryParameters:parameters];
+        
+        NSURL *newUrl = [NSURL URLWithString:thePath];
+        
+        request = [KPCHTTPURLRequestConstructor
+                                            urlRequestWithURL:newUrl
+                                            httpMethod:KPCHTTPURLRequestMethodGET
+                                            httpHeaders:@{KPCHTTPURLRequestHeaderNameContentType : KPCHTTPURLRequestContentTypeJSON, KPCHTTPURLRequestHeaderNameAccept : KPCHTTPURLRequestContentTypeJSON, KPCHTTPURLRequestHeaderNameDeviceToken : _sessionToken}
+                                            parameters:nil];
+        
+        
+    
+        
+        NSURLSessionDataTask *getGamesDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            
+            //Getting NSDictionary from JSON
+            
+            NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                NSLog(@"%@",parsedObject[@"status"][@"status_code"]);
+                
+                if ([parsedObject[@"status"][@"status_code"] integerValue] != SessionResponseCodeAllOk) {
+                    
+                    NSError *error = nil;
+                    
+                    error = [NSError errorWithDomain:SessionResponseStatusInsuficientParametersDomain code:SessionResponseCodeInsuficientParameters userInfo:@{
+                                                                                                                                                                 
+                                                                                                                                                                 @"Insufficient parameters.":NSLocalizedDescriptionKey
+                                                                                                                                                                 
+                                                                                                                                                                 }];
+                    block(nil,error);
+                }
+                else{
+                    
+                    block(parsedObject[SessionResponse],nil);
+                }
+                
+                
+            });
+        }];
+        
+        [getGamesDataTask resume];
+        [session finishTasksAndInvalidate];
+        
+    });
+}
+
+///--------------------------------------
+#pragma mark - Get Request For Image
+///--------------------------------------
+
+- (void)downloadGameImageInBackground:(KPCGame *)game completionHandler:(KPCSessionImageResponseBlock)block{
+    
+    _sessionQueue = dispatch_queue_create("com.puneetpalsingh.KamcordProgrammingChallenge.sessionqueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    
+    dispatch_async(_sessionQueue, ^{
+        
+        //NSSession for downloading image
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:nil];
+        
+        NSURL *url = [NSURL URLWithString:game.gameIconUrl];
+        
+        NSMutableURLRequest *request;
+        
+        request = [KPCHTTPURLRequestConstructor
+                   urlRequestWithURL:url
+                   httpMethod:KPCHTTPURLRequestMethodGET
+                   httpHeaders:nil
+                   parameters:nil];
+
+        NSURLSessionDataTask *getImageDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            
+            UIImage *image = [UIImage imageWithData:data];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (image) {
+                    
+                    block(image,nil);
+                }
+                else{
+                    
+                    NSError *error = nil;
+                    
+                    error = [NSError errorWithDomain:SessionResponseStatusErrorDownloadingImageDomain code:SessionResponseCodeErrorDownloadingImage userInfo:@{
+                                                                                                                                                                 
+                                                                                                                                                                 @"Error Downloading Image.":NSLocalizedDescriptionKey
+                                                                                                                                                                 
+                                                                                                                                                                 }];
+                    block(nil,error);
+                    
+                }
+                
+            });
+        }];
+        
+        [getImageDataTask resume];
+        [session finishTasksAndInvalidate];
+        
+    });
+
+    
+}
 
 @end

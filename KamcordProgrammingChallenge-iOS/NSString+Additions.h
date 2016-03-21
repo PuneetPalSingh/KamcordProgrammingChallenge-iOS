@@ -10,4 +10,9 @@
 
 @interface NSString (Additions)
 
+///--------------------------------------
+/// Return string after appending query from prameters
+///--------------------------------------
+- (NSString *)stringByAppendingQueryParameters:(NSDictionary *)parameters;
+
 @end

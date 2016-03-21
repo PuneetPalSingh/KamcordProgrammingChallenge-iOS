@@ -1,18 +1,18 @@
 //
-//  AppDelegate.m
+//  KPCAppDelegate.m
 //  KamcordProgrammingChallenge-iOS
 //
 //  Created by Puneet Pal Singh on 3/18/16.
 //  Copyright © 2016 Puneet Pal Singh. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "KPCAppDelegate.h"
 
-@interface AppDelegate ()
+@interface KPCAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation KPCAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -41,5 +41,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
 
 @end

@@ -1,5 +1,5 @@
 //
-//  GamesCollectionVC.h
+//  KPCGamesCollectionVC.h
 //  KamcordProgrammingChallenge-iOS
 //
 //  Created by Puneet Pal Singh on 3/18/16.
@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GamesCollectionVC : UICollectionViewController
 
-@property (strong, nonatomic) IBOutlet UICollectionView *gamesCollectionView;
+@protocol collectionViewDelegate <NSObject>
 
+-(void)collectionViewDidFinishLoadingDataDelegate;
+
+@end
+@interface KPCGamesCollectionVC : UICollectionViewController
+
+@property (nonatomic,strong) IBOutlet UICollectionView *gamesCollectionView;
+
+@property (nonatomic,weak) id<collectionViewDelegate> delegate;
 @end

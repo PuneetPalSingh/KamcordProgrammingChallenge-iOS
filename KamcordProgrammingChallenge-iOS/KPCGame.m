@@ -10,4 +10,19 @@
 
 @implementation KPCGame
 
+
+-(instancetype)initWithGameID:(NSString *) gameID gameName:(NSString *)gameName gameIconUrl:(NSString *)gameIconUrl gameIconImage:(UIImage *)gameIconImage{
+    
+    if (self = [super init]) {
+        
+        _gameID = gameID;
+        _gameName = gameName;
+        _gameIconUrl = gameIconUrl;
+        _gameIconImage = gameIconImage;
+        
+    }
+    
+    return self;
+}
+
 @end

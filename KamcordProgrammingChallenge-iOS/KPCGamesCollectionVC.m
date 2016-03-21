@@ -1,36 +1,73 @@
 //
-//  GamesCollectionVC.m
+//  KPCGamesCollectionVC.m
 //  KamcordProgrammingChallenge-iOS
 //
 //  Created by Puneet Pal Singh on 3/18/16.
 //  Copyright © 2016 Puneet Pal Singh. All rights reserved.
 //
 
-#import "GamesCollectionVC.h"
-#import "GamesCollectionCellView.h"
+#import "KPCGamesCollectionVC.h"
+#import "KPCGamesCollectionCellView.h"
+#import "KPCSessionManager.h"
+#import "KPCHTTPURLRequestConstant.h"
+#import "KPCGamesCollection.h"
+#import "KPCGame.h"
 
-@interface GamesCollectionVC () <UICollectionViewDataSource,UICollectionViewDelegate> {
-    
-    NSArray *_dataArray;
-    
-}
 
+#define CELLACTUALWIDTH 100
+#define CELLACTUALHEIGHT 120
+
+#define IPADCELLNUMBERSINROW 5
+#define IPHONECELLNUMBERSINROW 3
+
+#define IPADCELLNEWWIDTH(width) ((width / IPADCELLNUMBERSINROW) - 15)
+#define IPADCELLNEWHEIGHT(width)(((width / IPADCELLNUMBERSINROW) * CELLACTUALHEIGHT) / CELLACTUALWIDTH)
+
+#define IPHONECELLNEWWIDTH(width) ((width / IPHONECELLNUMBERSINROW) - 15)
+#define IPHONECELLNEWHEIGHT(width)(((width / IPHONECELLNUMBERSINROW) * CELLACTUALHEIGHT) / CELLACTUALWIDTH)
+
+
+
+static NSString* const gameCellIdentifier = @"GamesCell";
+
+@interface KPCGamesCollectionVC () <UICollectionViewDataSource,UICollectionViewDelegate>
+
+
+@property (nonatomic,strong) KPCGamesCollection *sharedGamesCollection;
+@property (nonatomic,strong) NSString *pageNumber;
+@property (nonatomic,assign, getter=isLoadingInProgress) BOOL loadingInProgress;
 @end
 
-@implementation GamesCollectionVC
+@implementation KPCGamesCollectionVC
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _dataArray = [NSArray arrayWithObjects:@"image1.png",@"image2.png",@"image3.png",@"image4.png",@"image5.png",@"image6.png",@"image7.png",@"image8.png",@"image9.png",@"image10.png",@"image11.png", nil];
+    //initialize
+    _pageNumber = @"0:0";
+    _loadingInProgress = NO;
+    _sharedGamesCollection = [KPCGamesCollection sharedGamesCollection];
+    
+    
+    
+    // Register Cell With reused identifier
+    [self.gamesCollectionView registerNib:[UINib nibWithNibName:@"KPCGamesCollectionCellView" bundle:nil]   forCellWithReuseIdentifier:gameCellIdentifier];
+    
+    // Fetch data on start
+    [self fetchGamesWithPageNumber:_pageNumber];
+    
 }
 
 
+///--------------------------------------
+#pragma mark - UIcollectionView DataSource
+///--------------------------------------
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return _dataArray.count;
+    return [_sharedGamesCollection fetchAllGames].count;
     
 }
 
@@ -39,39 +76,184 @@
     NSString *cellIdentifier = @"GamesCell";
     
     
-    GamesCollectionCellView *gamesCell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    KPCGamesCollectionCellView *gamesCell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    if(gamesCell == nil)
-    {
-        // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
-        gamesCell = [[[NSBundle mainBundle] loadNibNamed:@"GamesCollectionCellView" owner:self options:nil] objectAtIndex:0];
+    gamesCell.layer.shouldRasterize = YES;
+    gamesCell.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    
+    
+    KPCGame *game = [_sharedGamesCollection gameAtIndex:indexPath.row];
+    
+    gamesCell.gamesTitleTextView.text = game.gameName;
+    
+    // if image already fetch else fetch it asynchronously
+    if (game.gameIconImage) {
         
+        gamesCell.gamesIconImageView.image = game.gameIconImage;
         
     }
-    
-    gamesCell.gamesTitleTextView.text = [_dataArray objectAtIndex:indexPath.row];
+    else{
+        
+        [self dowmloadImageForGameAsynchronously:game collectionViewCell:gamesCell];
+        
+    }
     
     return gamesCell;
     
-
+    
     
 }
+
+-(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    // Load more data 10 cells before.
+    
+    if (([_sharedGamesCollection fetchAllGames].count - 10) == indexPath.row) {
+        
+        
+        if (![self isLoadingInProgress]) {
+            
+            [self fetchGamesWithPageNumber:_pageNumber];
+        }
+    
+    }
+    
+}
+
+
+///--------------------------------------
+#pragma mark - UIcollectionView Delegate
+///--------------------------------------
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    KPCGame *game = [_sharedGamesCollection gameAtIndex:indexPath.row];
+    
+    if (game) {
+        
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:game.gameName message:[NSString stringWithFormat:@"You've selected %@, game with game_id:%@",game.gameName,game.gameID] preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertView addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+            
+            //Ok Button Tapped
+            
+        }]];
+        
+        // Present alert view.
+        [self presentViewController:alertView animated:YES completion:nil];
+    }
+  
+    
+}
+
+///--------------------------------------
+#pragma mark - UIcollectionView ViewLayout
+///--------------------------------------
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-   
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     
-    // Adjust cell size for orientation
-    if (orientation == UIDeviceOrientationPortrait) {
-        return CGSizeMake(self.view.frame.size.width / 3.5, self.view.frame.size.width / 3.0);
+    CGFloat width = self.view.frame.size.width;
+    
+    UIDevice* thisDevice = [UIDevice currentDevice];
+    if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad)
+    {
+        
+        
+        return CGSizeMake(IPADCELLNEWWIDTH(width), IPADCELLNEWHEIGHT(width));
+        
     }
-    return CGSizeMake(self.view.frame.size.width / 6.0, self.view.frame.size.width / 5.8);
+    else
+    {
+        
+        return CGSizeMake(IPHONECELLNEWWIDTH(width), IPHONECELLNEWHEIGHT(width));
+        
+    }
 }
+
+- (UIEdgeInsets)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    
+    return UIEdgeInsetsMake(10, 10, 10, 10); // top, left, bottom, right
+ 
+}
+
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    
+    return 10;
+    
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    
+    return 10;
+
+}
+
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [self.collectionView performBatchUpdates:nil completion:nil];
+}
+
+///--------------------------------------
+#pragma mark - Private Methods
+///--------------------------------------
+
+-(void)fetchGamesWithPageNumber:(NSString *)pageNumber{
+    
+    KPCSessionManager *sessionManager = [KPCSessionManager sessionWithToken:KPCToken];
+    
+    NSURL *url = [NSURL URLWithString:KPCGamesUrl];
+    
+    _loadingInProgress = YES;
+    
+    [sessionManager getRequestWithUrlInBackground:url parameters:@{@"count": @"20", @"page" : pageNumber} completionHandler:^(NSDictionary *parsedJsonData, NSError *error){
+        
+        if (!error) {
+            
+            _pageNumber = parsedJsonData[@"next_page"];
+            
+            NSArray *data = [[NSArray alloc]initWithArray:parsedJsonData[@"card_models"]];
+            
+            for (NSDictionary *dictionary in data) {
+                
+                NSDictionary *gameDictionary = dictionary[@"game"];
+                
+                [_sharedGamesCollection addGameInCollectionWithGameID:(NSString *)gameDictionary[@"id"] gameName:gameDictionary[@"name"]gameIconUrl:gameDictionary[@"icons"][@"regular"]];
+    
+            }
+            
+            [_gamesCollectionView reloadData];
+
+            static dispatch_once_t onceToken;
+            dispatch_once (&onceToken, ^{
+                
+                 [_delegate collectionViewDidFinishLoadingDataDelegate];
+            });
+           
+            
+            _loadingInProgress = NO;
+            
+        }
+        
+    }];
+    
+}
+
+-(void)dowmloadImageForGameAsynchronously:(KPCGame *)game collectionViewCell:(KPCGamesCollectionCellView *)gameCell{
+    
+    KPCSessionManager *sessionManager = [KPCSessionManager createSession];
+    
+    [sessionManager downloadGameImageInBackground:game completionHandler:^(UIImage *image, NSError *error){
+        
+        game.gameIconImage = image;
+        gameCell.gamesIconImageView.image = image;
+   
+    }];
+    
 }
 
 

@@ -10,4 +10,14 @@
 
 @interface KPCHTTPURLRequestConstructor : NSObject
 
+///--------------------------------------
+/// Create NSMutaleRequest for provided url, httpMethod, httpHeaders and parameters
+///--------------------------------------
+
++ (NSMutableURLRequest *)urlRequestWithURL:(NSURL *)url
+                                httpMethod:(NSString *)httpMethod
+                               httpHeaders:(NSDictionary *)httpHeaders
+                                parameters:(NSDictionary *)parameters;
+
+
 @end
