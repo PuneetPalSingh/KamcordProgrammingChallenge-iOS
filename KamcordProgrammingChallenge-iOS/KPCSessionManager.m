@@ -94,9 +94,7 @@ static NSString *SessionResponseStatusErrorDownloadingImageDomain = @"com.puneet
             NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                
-                NSLog(@"%@",parsedObject[@"status"][@"status_code"]);
-                
+                                
                 if ([parsedObject[@"status"][@"status_code"] integerValue] != SessionResponseCodeAllOk) {
                     
                     NSError *error = nil;
