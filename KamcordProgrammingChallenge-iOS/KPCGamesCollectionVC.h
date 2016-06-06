@@ -14,9 +14,10 @@
 -(void)collectionViewDidFinishLoadingDataDelegate;
 
 @end
+
 @interface KPCGamesCollectionVC : UICollectionViewController
 
 @property (nonatomic,strong) IBOutlet UICollectionView *gamesCollectionView;
-
 @property (nonatomic,weak) id<collectionViewDelegate> delegate;
+
 @end

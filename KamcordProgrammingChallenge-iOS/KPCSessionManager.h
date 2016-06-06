@@ -16,12 +16,10 @@ typedef void (^KPCSessionImageResponseBlock)(UIImage *Image, NSError *error);
 
 @interface KPCSessionManager : NSObject <NSURLSessionDelegate>
 
-
 /**
  It will store the session token .
  */
 @property (nonatomic,strong) NSString *sessionToken;
-
 
 /*!
  * @method      getRequestWithUrlInBackground
@@ -31,7 +29,6 @@ typedef void (^KPCSessionImageResponseBlock)(UIImage *Image, NSError *error);
 
 - (void)getRequestWithUrlInBackground:(NSURL *)url parameters:(NSDictionary *)parameters completionHandler:(KPCSessionJsonResponseBlock)block;
 
-
 /*!
  * @method      downloadGameImageInBackground
  * @abstract    fetch image from server for given game.
@@ -39,7 +36,6 @@ typedef void (^KPCSessionImageResponseBlock)(UIImage *Image, NSError *error);
  */
 
 - (void)downloadGameImageInBackground:(KPCGame *)game completionHandler:(KPCSessionImageResponseBlock)block;
-
 
 ///---------------------
 /// @name Initialization

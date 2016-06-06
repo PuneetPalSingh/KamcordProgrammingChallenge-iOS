@@ -20,16 +20,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _gamesCollectionContainerView.hidden = YES;
-    
     [_loadingActivityIndicator startAnimating];
-    
-    
 }
 
 -(void)collectionViewDidFinishLoadingDataDelegate{
-
     [_loadingActivityIndicator stopAnimating];
-    
      _gamesCollectionContainerView.hidden = NO;
 }
 

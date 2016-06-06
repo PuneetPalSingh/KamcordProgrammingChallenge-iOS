@@ -17,14 +17,10 @@
     _gamesIconImageView.layer.cornerRadius = 15;
 
     self.layer.cornerRadius = 2;
-    
-    
     UIDevice* thisDevice = [UIDevice currentDevice];
-    if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad)
-    {
+    if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         _gamesTitleTextView.font = [UIFont systemFontOfSize:15];
     }
-    
     self.layer.borderWidth = 1;
     self.layer.borderColor = [[UIColor lightGrayColor]CGColor];
 }

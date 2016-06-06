@@ -10,7 +10,6 @@
 #import "KPCHTTPURLRequestConstant.h"
 @implementation KPCHTTPURLRequestConstructor
 
-
 ///--------------------------------------
 #pragma mark - NSMutable Url Constructor Public Method
 ///--------------------------------------
@@ -30,20 +29,15 @@
     if (parameters != nil) {
         if([httpMethod isEqualToString:KPCHTTPURLRequestMethodPOST] ||
            [httpMethod isEqualToString:KPCHTTPURLRequestMethodPUT]){
-            
             [request setValue:KPCHTTPURLRequestContentTypeJSON forHTTPHeaderField:KPCHTTPURLRequestHeaderNameContentType];
-            
         }
         
         NSError *error = nil;
         request.HTTPBody = [NSJSONSerialization dataWithJSONObject:parameters
                                                            options:(NSJSONWritingOptions)0
                                                              error:&error];
-        
     }
-    
     return request;
 }
-
 
 @end

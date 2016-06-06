@@ -492,6 +492,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.puneetpalsingh.KamcordProgrammingChallenge-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -507,6 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.puneetpalsingh.KamcordProgrammingChallenge-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

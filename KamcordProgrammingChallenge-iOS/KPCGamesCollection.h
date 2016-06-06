@@ -17,7 +17,6 @@
 
 -(void)addGameInCollectionWithGameID:(NSString *) gameID gameName:(NSString *)gameName gameIconUrl:(NSString *)gameIconUrl gameIconData:(UIImage *)gameIconImage;
 
-
 -(void)addGameInCollectionWithGameID:(NSString *) gameID gameName:(NSString *)gameName gameIconUrl:(NSString *)gameIconUrl;
 
 -(KPCGame *)gameAtIndex:(NSInteger)index;
